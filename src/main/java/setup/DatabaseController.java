@@ -21,7 +21,7 @@ import java.util.Random;
  * Created by Patrick van de Graaf
  */
 public class DatabaseController {
-    private GraphDatabaseService graphDb;
+    private final GraphDatabaseService graphDb;
 
     private final String[] studentNames = {"Onno", "Mitchell", "Nick", "Pepijn", "Deborah", "Leonie", "Laura", "Paul", "Wieland", "Marieke", "Ilse", "Steven", "Patrick", "Nav", "Daniël", "Robert", "Boy", "David", "Corné", "Ferry", "Linda", "Patrick", "Edwin", "Yael", "Dirk"};
     private final String[] studentMiddleNames = {"", "", "", "", "", "","", "", "", "", "", "", "", "Nirojan", "", "", "", "", "", "", "", "", "", "", "Pieter"};
@@ -37,7 +37,7 @@ public class DatabaseController {
 
     private static DatabaseController instance = null;
 
-    protected DatabaseController(){
+    private DatabaseController(){
         GraphDatabaseFactory graphDbFactory = new GraphDatabaseFactory();
 
         graphDb = graphDbFactory.newEmbeddedDatabaseBuilder("data/schoolDb")
@@ -56,7 +56,7 @@ public class DatabaseController {
         return instance;
     }
 
-    public void executeOperation(String operation){
+    private void executeOperation(String operation){
         Result result = graphDb.execute(operation);
         String dumped = result.resultAsString();
         System.out.println(operation);
