@@ -10,5 +10,5 @@ public enum Labels implements Label {
     Teacher,
     Student,
     Class,
-    Subject;
+    Subject
 }

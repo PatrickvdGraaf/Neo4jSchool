@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e88aea7-02a6-4532-baba-9530995bf12f" name="Default" comment="Upgrate to latest Neo4j version, added Classes, Subjects and Student Nodes, as well as FOLLOWS and IS_FRIENDS_WITH relations&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/setup/DatabaseController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_opencsv_opencsv_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_consistency_check_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_csv_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_cypher_compiler_2_2_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_io_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_primitive_collections_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_unsafe_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_10_5.xml" />
-      <change type="DELETED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_2_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\src\main\java\setup\DatabaseSetup.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__com_googlecode_concurrentlinkedhashmap_concurrentlinkedhashmap_lru_1_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_concurrentlinkedhashmap_concurrentlinkedhashmap_lru_1_4.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_cypher_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_cypher_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_cypher_commons_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_cypher_compiler_2_1_2_1_8.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_cypher_compiler_1_9_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_cypher_compiler_1_9_2_0_4.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_cypher_compiler_2_0_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_cypher_compiler_2_0_2_0_4.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_graph_algo_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_graph_algo_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_graph_matching_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_graph_matching_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_jmx_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_jmx_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_kernel_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_kernel_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_lucene_index_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_lucene_index_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_neo4j_neo4j_udc_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_neo4j_neo4j_udc_2_2_2.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_parboiled_parboiled_core_1_1_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_parboiled_parboiled_core_1_1_7.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_parboiled_parboiled_scala_2_10_1_1_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_parboiled_parboiled_scala_2_10_1_1_7.xml" />
-      <change type="MOVED" beforePath="C:\Users\Patrick van de Graaf\workspace\Neo4jSchool\.idea\libraries\Maven__org_scala_lang_scala_library_2_10_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/1-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/1-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/Class.java" afterPath="$PROJECT_DIR$/src/main/java/models/Class.java" />
+    <list default="true" id="2e88aea7-02a6-4532-baba-9530995bf12f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/setup/DatabaseController.java" afterPath="$PROJECT_DIR$/src/main/java/setup/DatabaseController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/enums/Labels.java" afterPath="$PROJECT_DIR$/src/main/java/enums/Labels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/runnable/Main.java" afterPath="$PROJECT_DIR$/src/main/java/runnable/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Neo4jSchool.iml" afterPath="$PROJECT_DIR$/Neo4jSchool.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/enums/Relationship.java" afterPath="$PROJECT_DIR$/src/main/java/enums/Relationship.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Neo4jSchool.iws" />
@@ -78,8 +44,8 @@
       <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/setup/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.020888">
-              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.9155673">
+              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/enums/Relationship.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -123,12 +89,12 @@
         <option value="$PROJECT_DIR$/src/main/java/models/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Subject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/enums/Labels.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Class.java" />
         <option value="$PROJECT_DIR$/src/main/java/setup/DatabaseSetup.java" />
         <option value="$PROJECT_DIR$/src/main/java/enums/Relationship.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/runnable/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/enums/Labels.java" />
         <option value="$PROJECT_DIR$/src/main/java/setup/DatabaseController.java" />
       </list>
     </option>
@@ -968,16 +934,23 @@
       <created>1433065884545</created>
       <option name="number" value="Default" />
       <updated>1433065884545</updated>
-      <workItem from="1433065887555" duration="10014000" />
+      <workItem from="1433065887555" duration="12502000" />
     </task>
+    <task id="LOCAL-00001" summary="Upgrate to latest Neo4j version, added Classes, Subjects and Student Nodes, as well as FOLLOWS and IS_FRIENDS_WITH relations&#10;">
+      <created>1433080732875</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1433080732875</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10014000" />
+    <option name="totallyTimeSpent" value="12502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -986,8 +959,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2875817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2875817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24836601" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18456884" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1054,14 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/Subject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15178572">
@@ -1078,14 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/enums/Labels.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22972973">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22972973">
@@ -1094,18 +1051,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/enums/Relationship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44117647">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/enums/Labels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1121,10 +1086,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/enums/Relationship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/setup/DatabaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.020888">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.9155673">
+          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

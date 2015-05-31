@@ -5,6 +5,7 @@ import enums.Relationship;
 import models.Class;
 import models.Student;
 import models.Subject;
+import models.Teacher;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Result;
@@ -28,6 +29,11 @@ public class DatabaseController {
 
     private final String[] subjects = {"Development", "Analyse", "Software Engeneering", "SLC", "Skills", "Management", "Data Science"};
     private final String[] subjectCodes = {"INFDEV", "INFANL", "INFSEN", "INFSLC", "INFSKL", "INFMAN", "INFDTA"};
+
+    private final String[] teacherIds = {"JOZIB", "TOOJJ", "KLEIW", "UBERT", "PADAM", "BUSAL", "INGKL", "PARIS"};
+    private final String[] teacherNames = {"Bob", "Hans", "Wendy", "Tanja", "Arne", "Tony", "Kevin", "Stelian"};
+    private final String[] teacherMiddleNames = {"", "", "", "", "", "", "", ""};
+    private final String[] teacherSurnames = {"Joziasse", "van Toor", "Kleij", "Ubert", "Padmos", "Busker", "van Ingen", "Parashiv"};
 
     private static DatabaseController instance = null;
 
@@ -82,14 +88,77 @@ public class DatabaseController {
             Node classE = graphDb.createNode(Labels.Class);
             classE.setProperty(Class.CLASS_CODE, "INF3E");
 
+            //And the teachers that can mentor the class and will teach subjects
+            HashMap<String, Node> teacherNodes = new HashMap<>();
+            for (int i = 0; i<teacherIds.length; i++){
+                Node teacher = graphDb.createNode(Labels.Teacher);
+                teacher.setProperty(Teacher.TEACHER_ID, teacherIds[i]);
+                teacher.setProperty(Teacher.NAME, teacherNames[i]);
+                teacher.setProperty(Teacher.MIDDLE_NAME, teacherMiddleNames[i]);
+                teacher.setProperty(Teacher.SURNAME, teacherSurnames[i]);
+
+                teacherNodes.put(teacherIds[i], teacher);
+            }
+
+            Random rand = new Random();
+            //Teachers can be friends with each other
+            for(Node n : teacherNodes.values()) {
+                int numberOfFriends = rand.nextInt(2) + 1;
+                for (int i = 0; i < numberOfFriends; i++) {
+                    int randomFriend = rand.nextInt(teacherNodes.size());
+                    if (teacherNodes.get(teacherIds[randomFriend]) == n) {
+                        randomFriend++;
+                    }
+                    n.createRelationshipTo(teacherNodes.get(teacherIds[randomFriend]), Relationship.IS_FRIENDS_WITH);
+                }
+            }
+
+            teacherNodes.get("KLEIW").createRelationshipTo(classA, Relationship.MENTORS);
+            teacherNodes.get("JOZIB").createRelationshipTo(classB, Relationship.MENTORS);
+            teacherNodes.get("INGKL").createRelationshipTo(classC, Relationship.MENTORS);
+            teacherNodes.get("PARIS").createRelationshipTo(classD, Relationship.MENTORS);
+            teacherNodes.get("UBERT").createRelationshipTo(classE, Relationship.MENTORS);
+
             //Then all the subjects a student can follow. Some are mandatory
             HashMap<String, Node> subjectNodes = new HashMap<>();
             for(int i = 0; i < subjects.length; i++){
-                Node subject = graphDb.createNode(Labels.Class);
+                Node subject = graphDb.createNode(Labels.Subject);
                 subject.setProperty(Subject.SUBJECT_CODE, subjectCodes[i]);
                 subject.setProperty(Subject.NAME, subjects[i]);
                 subjectNodes.put(subjectCodes[i], subject);
             }
+
+            //These subjects must be given by a teacher
+            teacherNodes.get("KLEIW").createRelationshipTo(subjectNodes.get("INFSKL"), Relationship.TEACHES);
+            teacherNodes.get("UBERT").createRelationshipTo(subjectNodes.get("INFSKL"), Relationship.TEACHES);
+
+            teacherNodes.get("JOZIB").createRelationshipTo(subjectNodes.get("INFDEV"), Relationship.TEACHES);
+            teacherNodes.get("TOOJJ").createRelationshipTo(subjectNodes.get("INFDEV"), Relationship.TEACHES);
+            teacherNodes.get("INGKL").createRelationshipTo(subjectNodes.get("INFDEV"), Relationship.TEACHES);
+
+            teacherNodes.get("PADAM").createRelationshipTo(subjectNodes.get("INFANL"), Relationship.TEACHES);
+            teacherNodes.get("PARIS").createRelationshipTo(subjectNodes.get("INFANL"), Relationship.TEACHES);
+
+            teacherNodes.get("BUSAL").createRelationshipTo(subjectNodes.get("INFSEN"), Relationship.TEACHES);
+            teacherNodes.get("TOOJJ").createRelationshipTo(subjectNodes.get("INFSEN"), Relationship.TEACHES);
+
+            teacherNodes.get("KLEIW").createRelationshipTo(subjectNodes.get("INFSLC"), Relationship.TEACHES);
+
+            teacherNodes.get("PADAM").createRelationshipTo(subjectNodes.get("INFMAN"), Relationship.TEACHES);
+            teacherNodes.get("UBERT").createRelationshipTo(subjectNodes.get("INFMAN"), Relationship.TEACHES);
+
+
+            teacherNodes.get("TOOJJ").createRelationshipTo(subjectNodes.get("INFDTA"), Relationship.TEACHES);
+            teacherNodes.get("INGKL").createRelationshipTo(subjectNodes.get("INFDTA"), Relationship.TEACHES);
+
+            //one teacher is the module owner
+            teacherNodes.get("KLEIW").createRelationshipTo(subjectNodes.get("INFSKL"), Relationship.IS_MODULE_OWNER_OF);
+            teacherNodes.get("INGKL").createRelationshipTo(subjectNodes.get("INFDEV"), Relationship.IS_MODULE_OWNER_OF);
+            teacherNodes.get("PADAM").createRelationshipTo(subjectNodes.get("INFANL"), Relationship.IS_MODULE_OWNER_OF);
+            teacherNodes.get("TOOJJ").createRelationshipTo(subjectNodes.get("INFSEN"), Relationship.IS_MODULE_OWNER_OF);
+            teacherNodes.get("KLEIW").createRelationshipTo(subjectNodes.get("INFSLC"), Relationship.IS_MODULE_OWNER_OF);
+            teacherNodes.get("UBERT").createRelationshipTo(subjectNodes.get("INFMAN"), Relationship.IS_MODULE_OWNER_OF);
+            teacherNodes.get("INGKL").createRelationshipTo(subjectNodes.get("INFDTA"), Relationship.IS_MODULE_OWNER_OF);
 
             //To keep things easy, we start with 5 students per class
             ArrayList<Node> students = new ArrayList<>();
@@ -141,7 +210,6 @@ public class DatabaseController {
                 students.add(student);
             }
 
-            Random rand = new Random();
             for(Node n : students){
               //Create some friendships
               int numberOfFriends = rand.nextInt(5) + 1;
