@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * This class is used to...
+ * This class is used to control every action we want to make with the Database
  * Created by Patrick van de Graaf
  */
 public class DatabaseController {
@@ -37,6 +37,9 @@ public class DatabaseController {
 
     private static DatabaseController instance = null;
 
+    /**
+     * In the constructor, we define and setup our database
+     */
     private DatabaseController(){
         GraphDatabaseFactory graphDbFactory = new GraphDatabaseFactory();
 
@@ -45,6 +48,9 @@ public class DatabaseController {
                 .newGraphDatabase();
     }
 
+    /**
+     * Making this class a thread safe singleton
+     */
     public static DatabaseController getInstance() {
         if (instance == null) {
             synchronized (DatabaseController.class) {
@@ -56,6 +62,12 @@ public class DatabaseController {
         return instance;
     }
 
+    /**
+     * Simple method to execute a Cypher operation
+     * For debugging purposes, we print the results
+     *
+     * @param operation : Cypher code we want to execute
+     */
     private void executeOperation(String operation){
         Result result = graphDb.execute(operation);
         String dumped = result.resultAsString();
@@ -63,6 +75,15 @@ public class DatabaseController {
         System.out.println(dumped);
     }
 
+    /**
+     * Here we setup the test data. We use some references to Hogeschool Rotterdam, like subject codes and teacher names, but the
+     * data isn't 100% the same as in the real world, this is just for illustration and to show a graph.
+     *
+     * IMPORTANT
+     * for now, we delete all data with the Cypher code below, because at the time of writing, we are still changing a lot and don't want te
+     * create duplicate Nodes. When reviewing, keep in mind whether u want to call this whole method and if u do, whether u want to delete all
+     * previous nodes
+     */
     public void setup(){
         try(Transaction tx = graphDb.beginTx()){
 
