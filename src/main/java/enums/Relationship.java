@@ -12,6 +12,7 @@ public enum Relationship implements RelationshipType{
     IS_IN,
     MENTORS,
     IS_FRIENDS_WITH,
+    IS_MODULE_OWNER_OF,
     IS_IN_GROUP_WITH;
     public static final String FROM = "from";
 }
